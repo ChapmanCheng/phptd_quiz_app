@@ -2,24 +2,25 @@
 
 class Question
 {
-    public $index = 0;
-    public $q;
-    public $total;
+    private $questions;
+    private $index;
+    private $q;
+    private $total;
 
-    public function __construct($questions)
+    public function __construct($questions, $index)
     {
-        $index = rand(0, count($questions) - 1);
-        $keys = array_keys($_SESSION['answered']);
-        if (isset($_SESSION['answered'])) {
-        }
-
-
-        $question = $questions[$index];
-        $total =  count($questions);
-
         $this->index = $index;
-        $this->q = $question;
-        $this->total = $total;
+        $this->q = $questions[$index];
+        $this->total = count($questions);
+    }
+    public function __get($name)
+    {
+        if (isset($this->{$name}))
+            return $this->{$name};
+    }
+    private function getRandomNo()
+    {
+        rand(0, count($this->questions) - 1);
     }
 }
 // Generate random questions
