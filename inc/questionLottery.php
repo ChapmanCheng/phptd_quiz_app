@@ -2,12 +2,13 @@
 
 class QuestionLottery
 {
+    private $index = 0;
     private $questions;
-    public $q;
-    public $totalOfQuestion;
+    private $totalOfQuestion;
 
     public function __construct($questions)
     {
+        shuffle($questions);
         $this->questions = $questions;
         $this->totalOfQuestion = count($questions);
     }
@@ -20,11 +21,17 @@ class QuestionLottery
         }
     }
 
-    public function getRandomQuestions()
+    public function getAnswered()
     {
-        $count = count($this->questions);
-        $rand = rand(0, $count - 1);
-        $this->q = $this->questions[$rand];
+        return $this->index + 1;
+    }
+    public function getTotal()
+    {
+        return $this->totalOfQuestion;
+    }
+    public function getQuestion()
+    {
+        return $this->questions[$this->index];
     }
 }
 // Generate random questions
