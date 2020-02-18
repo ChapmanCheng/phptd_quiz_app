@@ -9,14 +9,11 @@ include_once './inc/questions.php';
 
 
 // Session
-// session_destroy();
 
 if (isset($_POST['id'])) {
     $post = new PostData();
     $post->pushToSession();
 };
-
-// var_dump($_SESSION['answered']);
 
 $answers = new Answers($questions);
 $answers->sortAnsweredByKey();

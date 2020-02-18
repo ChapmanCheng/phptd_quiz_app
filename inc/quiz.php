@@ -17,17 +17,17 @@
 
 // ! Include questions
 
-// Keep track of which questions have been asked
+// !Keep track of which questions have been asked
 
-// Show which question they are on
+// ! Show which question they are on
 // ! Show random question
 // ! Shuffle answer buttons
 
 
-// Toast correct and incorrect answers
+// ! Toast correct and incorrect answers
 // ! Keep track of answers
-// If all questions have been asked, give option to show score
-// else give option to move to next question
+// ! If all questions have been asked, give option to show score
+// ! else give option to move to next question
 
 
-// Show score
+// ! Show score
